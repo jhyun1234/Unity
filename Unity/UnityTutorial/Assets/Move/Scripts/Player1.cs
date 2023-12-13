@@ -8,7 +8,11 @@ public class Player1 : MonoBehaviour
 
     public float speed = 5f;
 
-    
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
     void Update()
     {
         // Input.GetAxis() : 특정한 Key를 누를 때 -1 ~ 1 사이의 값을 반환하는 함수이다.

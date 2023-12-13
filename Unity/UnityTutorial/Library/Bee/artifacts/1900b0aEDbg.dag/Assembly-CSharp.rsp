@@ -352,14 +352,12 @@
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEngine.UI.ref.dll"
 -analyzer:"D:/unity/2022.3.14f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"D:/unity/2022.3.14f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
-"Assets/Animator/Animator 1/UGUI/Scripts/MainMenu.cs"
-"Assets/Animator/Animator 1/UGUI/Scripts/TextManager.cs"
+"Assets/Animator/UGUI/Scripts/MainMenu.cs"
+"Assets/Animator/UGUI/Scripts/TextManager.cs"
 "Assets/Move/Scripts/Player1.cs"
 "Assets/Scripts/DataManager.cs"
 "Assets/Scripts/LifeCycle.cs"
 "Assets/Scripts/Player.cs"
-"Assets/Sport Car - 3D model/Scripts/CameraScript.cs"
-"Assets/Sport Car - 3D model/Scripts/LightEffects.cs"
 -langversion:9.0
 
 /deterministic
