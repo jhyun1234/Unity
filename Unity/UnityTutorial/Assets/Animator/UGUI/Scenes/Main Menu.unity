@@ -710,6 +710,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: 0}
   speed: 5
+  playerCamera: {fileID: 1540473799}
 --- !u!136 &812050052
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -795,7 +796,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1540473800}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &917838703
@@ -1368,7 +1370,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 812050055}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1578143115
 GameObject:
@@ -1815,5 +1817,4 @@ SceneRoots:
   - {fileID: 1000286864}
   - {fileID: 1495122170}
   - {fileID: 2074856627}
-  - {fileID: 1540473800}
   - {fileID: 812050055}
