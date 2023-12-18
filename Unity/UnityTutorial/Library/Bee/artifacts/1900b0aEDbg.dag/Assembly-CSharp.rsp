@@ -356,6 +356,7 @@
 "Assets/Animation Clip/Scripts/Parallax.cs"
 "Assets/Animator/UGUI/Scripts/MainMenu.cs"
 "Assets/Animator/UGUI/Scripts/TextManager.cs"
+"Assets/Instantiate/Scripts/SpwanManager.cs"
 "Assets/Move/Scripts/Player1.cs"
 "Assets/Scripts/DataManager.cs"
 "Assets/Scripts/LifeCycle.cs"
