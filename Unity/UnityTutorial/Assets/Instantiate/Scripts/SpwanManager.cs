@@ -1,33 +1,42 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SpwanManager : MonoBehaviour
 {
-    [SerializeField] GameObject unit;
-    [SerializeField] Transform createPosition;
+    // [0]   [1]
+    // 소서 마법사
+    [SerializeField] List<Unit> listUnits;
 
-    [Tooltip("몬스터를 생성하는 변수")]
-    [SerializeField] int createCount = 5;
+    [SerializeField] Factory factory;
+
+    
+    
     private void Start()
     {
-        
-        // Instantiate : 게임 오브젝트를 생성하는 함수이다.
-        for(int i=0; i< createCount; i++)
+        // StartCoroutine 코루틴을 사용할때 사용해야한다
+        StartCoroutine(CreateRoutine());
+        Debug.Log("First");
+    }
+    
+    public IEnumerator CreateRoutine()
+    {
+        while(true)
         {
-            // 1. 게임 오브젝트 생성
-            GameObject monster = Instantiate(unit, createPosition);
+            // Random.Range : 0 ~ 최댓값-1의 값을 반환하는 함수이다.
+            // Random.Range(0, listUnits.Count)  
+            factory.CreateUnit(listUnits[Random.Range(0, listUnits.Count)]);
 
-            // 2. 생성된 게임 오브젝트의 위치를 설정
-            monster.transform.position = new Vector3(i*5, 0, createPosition.position.z);
-
-            Debug.Log("Worle Position : " + monster.transform.position);
-            Debug.Log("Local Position : " + monster.transform.localPosition);
-
+          // new WaitForSeconds(5f) : 특정한 시간동한 코루틴을 대기한다.
+         yield return new WaitForSeconds(5f);
 
         }
     }
 
+    
+    
+   
 
 
 }
