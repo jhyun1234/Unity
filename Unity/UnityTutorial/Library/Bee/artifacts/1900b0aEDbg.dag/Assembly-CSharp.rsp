@@ -357,6 +357,7 @@
 "Assets/Animator/UGUI/Scripts/MainMenu.cs"
 "Assets/Animator/UGUI/Scripts/TextManager.cs"
 "Assets/Instantiate/Scripts/Factory.cs"
+"Assets/Instantiate/Scripts/Mouse.cs"
 "Assets/Instantiate/Scripts/SpwanManager.cs"
 "Assets/Instantiate/Scripts/Unit/Sorceress.cs"
 "Assets/Instantiate/Scripts/Unit/Unit.cs"
