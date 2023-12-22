@@ -17,6 +17,23 @@ public abstract class Unit : MonoBehaviour
     [SerializeField] Vector3 direction;
     [SerializeField] Vector3 targetDirection;
     [SerializeField] float speed = 5.0f;
+    [SerializeField] protected float health;
+
+    public void OnHit(float damage)
+    {
+        health -= damage;
+
+        if(health <=0)
+        {
+            state = State.Die;
+        }
+    }
+
+    public virtual void Release()
+    {
+        Destroy(gameObject);
+    }
+
     private void Awake()
     {
         target = GameObject.Find("Player");
@@ -25,7 +42,8 @@ public abstract class Unit : MonoBehaviour
 
     public void Update()
     {
-        switch(state)
+        
+        switch (state)
         {
             case State.Move: Move();
                 break;
@@ -64,7 +82,7 @@ public abstract class Unit : MonoBehaviour
 
     public virtual void Die()
     {
-
+        animator.Play("Die");
     }
     // OnTriggerEnter() : Trigger 충돌이 되었을 때 이벤트를 호출하는 함수
     private void OnTriggerEnter(Collider other)
