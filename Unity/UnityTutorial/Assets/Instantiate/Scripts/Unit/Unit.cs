@@ -7,7 +7,9 @@ public enum State // 문자를 상수로 바꿔줌
 {
     Move, // 0
     Attack, // 1
-    Die // 2
+    Die, // 2
+
+    None
 }
 public abstract class Unit : MonoBehaviour
 {
@@ -19,6 +21,7 @@ public abstract class Unit : MonoBehaviour
     [SerializeField] float speed = 5.0f;
     [SerializeField] protected float health;
 
+    [SerializeField] Sound sound = new Sound();
     public void OnHit(float damage)
     {
         health -= damage;
@@ -77,12 +80,19 @@ public abstract class Unit : MonoBehaviour
 
     public virtual void Attack()
     {
+   
         animator.SetBool("Attack", true);
     }
 
+    public void AttackSound()
+    {
+        SoundManager.instance.Sound(sound.audioClips[0]);
+    }
     public virtual void Die()
     {
+        SoundManager.instance.Sound(sound.audioClips[1]);
         animator.Play("Die");
+        state = State.None;
     }
     // OnTriggerEnter() : Trigger 충돌이 되었을 때 이벤트를 호출하는 함수
     private void OnTriggerEnter(Collider other)

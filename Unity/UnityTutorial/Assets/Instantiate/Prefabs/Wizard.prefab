@@ -17086,10 +17086,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41bfb572e0c9fee458a27edba5faeb5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
+  animator: {fileID: 0}
   target: {fileID: 0}
   direction: {x: 0, y: 0, z: 0}
   targetDirection: {x: 0, y: 0, z: 0}
   speed: 5
+  health: 0
+  sound:
+    audioClips:
+    - {fileID: 8300000, guid: 39d048fe5ac0fe24489d885125296aa0, type: 3}
+    - {fileID: 8300000, guid: 571d225e0b10f104aa3ff08f74d1bd28, type: 3}
 --- !u!136 &7549619628909197393
 CapsuleCollider:
   m_ObjectHideFlags: 0
