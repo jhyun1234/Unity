@@ -6,8 +6,9 @@ public class Wizard : Unit
 {
     public void Start()
     {
-        health = 100;
-        Debug.Log(health);
+        health = 40;
+        maxHealth = health;
+        
 
     }
 }

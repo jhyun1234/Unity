@@ -6,8 +6,8 @@ public class Sorceress : Unit
 {
     public void Start()
     {
-        health = 125;
-        Debug.Log(health);
+        health = 50;
+        maxHealth = health;
 
     }
 }

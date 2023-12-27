@@ -11,25 +11,41 @@ public enum State // ¹®ÀÚ¸¦ »ó¼ö·Î ¹Ù²ãÁÜ
 
     None
 }
+[RequireComponent(typeof(HPBar))]
 public abstract class Unit : MonoBehaviour
 {
     [SerializeField] State state;
     [SerializeField] Animator animator;
     [SerializeField] GameObject target;
+
     [SerializeField] Vector3 direction;
     [SerializeField] Vector3 targetDirection;
     [SerializeField] float speed = 5.0f;
-    [SerializeField] protected float health;
 
+    [SerializeField] protected float health;
+    [SerializeField] protected float maxHealth;
+
+    [SerializeField] HPBar healthBar;
     [SerializeField] Sound sound = new Sound();
+    private void Awake()
+    {
+        target = GameObject.Find("Player");
+        healthBar = GetComponent<HPBar>();
+        animator = GetComponent<Animator>();
+
+    }
     public void OnHit(float damage)
     {
+        if (health <= 0) return;
+        
         health -= damage;
 
         if(health <=0)
         {
             state = State.Die;
         }
+
+        healthBar.UpdateHP(health, maxHealth);
     }
 
     public virtual void Release()
@@ -37,11 +53,6 @@ public abstract class Unit : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void Awake()
-    {
-        target = GameObject.Find("Player");
-        animator = GetComponent<Animator>();
-    }
 
     public void Update()
     {
@@ -90,7 +101,11 @@ public abstract class Unit : MonoBehaviour
     }
     public virtual void Die()
     {
-        SoundManager.instance.Sound(sound.audioClips[1]);
+        
+        
+            SoundManager.instance.Sound(sound.audioClips[1]);
+
+        
         animator.Play("Die");
         state = State.None;
     }
