@@ -357,6 +357,7 @@
 "Assets/Animator/UGUI/Scripts/MainMenu.cs"
 "Assets/Animator/UGUI/Scripts/TextManager.cs"
 "Assets/Character Select/Scripts/Character Manager.cs"
+"Assets/Character Select/Scripts/DataManager.cs"
 "Assets/Instantiate/Scripts/Factory.cs"
 "Assets/Instantiate/Scripts/HPBar.cs"
 "Assets/Instantiate/Scripts/Mouse.cs"
@@ -366,6 +367,8 @@
 "Assets/Instantiate/Scripts/Unit/Sorceress.cs"
 "Assets/Instantiate/Scripts/Unit/Unit.cs"
 "Assets/Instantiate/Scripts/Unit/Wizard.cs"
+"Assets/Physics/Scripts/GameManager.cs"
+"Assets/Physics/Scripts/Player.cs"
 "Assets/Sound/Script/AudioManager.cs"
 "Assets/Sound/Script/Drone.cs"
 -langversion:9.0

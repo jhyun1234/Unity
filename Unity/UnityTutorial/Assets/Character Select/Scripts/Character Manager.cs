@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterManager : MonoBehaviour
 {
-    [SerializeField] int selectCount;
+    
     [SerializeField] List<GameObject> characterList;
     void Start()
     {
@@ -18,8 +18,28 @@ public class CharacterManager : MonoBehaviour
         {
             characterList[i].SetActive(false);
         }
-
-        characterList[selectCount].SetActive(true);
+        
+        characterList[DataManager.instance.SelectCount].SetActive(true);
     }
     
+    public void OnLeftButton()
+    {
+        DataManager.instance.SelectCount--;
+        if(DataManager.instance.SelectCount < 0)
+        {
+            DataManager.instance.SelectCount = characterList.Count - 1;
+        }
+
+        ShowCharacter();
+    }
+
+    public void OnRightButton()
+    {
+        DataManager.instance.SelectCount++;
+        if (DataManager.instance.SelectCount >= characterList.Count)
+        {
+            DataManager.instance.SelectCount = 0;
+        }
+        ShowCharacter();
+    }
 }
