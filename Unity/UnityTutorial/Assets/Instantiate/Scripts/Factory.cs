@@ -5,7 +5,7 @@ using UnityEngine;
 public class Factory : MonoBehaviour
 {
     [SerializeField] Transform spawnPosition;
-
+    
 
 
     // Unit -> 소서리스,마법사,오크,전사 코드 수정이 일어나지 않는다
