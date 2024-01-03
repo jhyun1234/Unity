@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Wizard : Unit
 {
-    public void Start()
+    public Wizard()
     {
         health = 40;
         maxHealth = health;

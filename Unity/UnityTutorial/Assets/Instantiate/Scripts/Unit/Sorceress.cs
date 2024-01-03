@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Sorceress : Unit
 {
-    public void Start()
+    public Sorceress()
     {
         health = 50;
         maxHealth = health;

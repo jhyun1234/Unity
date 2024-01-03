@@ -16,6 +16,7 @@ public abstract class Unit : MonoBehaviour
 {
     [SerializeField] State state;
     [SerializeField] Animator animator;
+    [SerializeField] Vector3 originDirection;
     [SerializeField] GameObject target;
 
     [SerializeField] Vector3 direction;
@@ -34,6 +35,13 @@ public abstract class Unit : MonoBehaviour
         animator = GetComponent<Animator>();
 
     }
+
+    private void OnEnable()
+    {
+        state = State.Move;
+        originDirection = transform.position;
+    }
+
     public void OnHit(float damage)
     {
         if (health <= 0) return;
@@ -50,7 +58,8 @@ public abstract class Unit : MonoBehaviour
 
     public virtual void Release()
     {
-        Destroy(gameObject);
+        // Destroy(gameObject);
+        ObjectPool.instance.InsertObject(gameObject);
     }
 
 
@@ -127,5 +136,11 @@ public abstract class Unit : MonoBehaviour
     {
 
         state = State.Move;
+    }
+
+    private void OnDisable()
+    {
+        transform.position = originDirection;
+        health = maxHealth;
     }
 }
